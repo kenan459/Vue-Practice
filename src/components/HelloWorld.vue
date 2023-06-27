@@ -9,25 +9,31 @@ defineProps({
 }
 )
 const refNumber = ref(1);
-const handleAdd = () => {
-  const add10 = 10;
-  // USING REF WITH VALUE PROPERTY
-  refNumber.value = refNumber.value + add10;
-  console.log(refNumber.value)
-  }
+const count = ref(0)
+// const handleAdd = () => {
+//   const add10 = 10;
+//   // USING REF WITH VALUE PROPERTY
+//   refNumber.value = refNumber.value + add10;
+//   console.log(refNumber.value)
+// }
+
+function increment () {
+  count.value++
+}
+
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h1 class="green">{{refNumber}}</h1>
-    <button @click="handleAdd">add</button>
+    <h1 class="green">{{ refNumber }}</h1>
+    <button @click="increment">add {{ count }}</button>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
     </h3>
-   
+
   </div>
 </template>
 
